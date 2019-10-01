@@ -1,4 +1,4 @@
-import { Component, ViewChildren, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'my-app',
@@ -6,10 +6,10 @@ import { Component, ViewChildren, ElementRef, AfterViewInit } from '@angular/cor
   styleUrls: [ './app.component.css' ]
 })
 export class AppComponent implements AfterViewInit{
-   @ViewChildren('myDiv') myDiv: ElementRef;
+   @ViewChild('myDiv', {static: false}) myDiv: ElementRef;
   name = 'Angular';
   ngAfterViewInit() {
-        console.log(this.myDiv.nativeElement.innerHTML);
+        console.log('what',this.myDiv.nativeElement.innerHTML);
     }
 
     openPDF(){
