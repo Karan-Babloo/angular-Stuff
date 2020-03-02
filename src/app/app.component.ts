@@ -16,4 +16,26 @@ export class AppComponent implements AfterViewInit{
       this.myDiv.nativeElement.scrollIntoView({ behavior: 'smooth', block: 'end', inline: 'start' });
     }
 
+  /*
+  getExportPayrollFileByPaymentType() {
+        this.service.RptExcelwith.00Decimal()
+        .then(
+            (response) => {
+              const byteArray = new Uint8Array(atob(response.data).split('').map(char => char.charCodeAt(0)));
+              return new Blob([byteArray], {
+                type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8'
+              });
+            }).then(blob => {
+            this.formHelper.saveAsExcelWithoutDateExtension(blob, 'ApExtractFilesRptExcel');
+          }, (error) => this.apiHander.catchAndNotify(error))
+          .catch(err => {
+            return Promise.reject(this.apiHander.catchAndNotify(err.json().error));
+          });
+    } */
+  
+ /* import * as FileSaver from 'file-saver'; 
+ saveAsExcelWithoutDateExtension(buffer: any, fileName: string): void {
+        const data: Blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet;charset=UTF-8' });
+        FileSaver.saveAs(data, fileName + '.xlsx');
+    }*/
 }
